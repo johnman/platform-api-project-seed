@@ -36,6 +36,7 @@ class LeftMenu extends HTMLElement {
                 <li><button @click=${() => this.toGrid().catch(console.error)}>Grid</button></li>
                 <li><button @click=${() => this.toTabbed().catch(console.error)}>Tab</button></li>
                 <li><button @click=${() => this.toRows().catch(console.error)}>Rows</button></li>
+                <li><button @click=${() => this.toColumns().catch(console.error)}>Columns</button></li>
                 <li><button @click=${() => this.newDefaultWindow().catch(console.error)}>New Chart Window</button></li>
                 <li><button @click=${() => this.nonLayoutWindow().catch(console.error)}>New Window</button></li>
                 <li><button @click=${() => this.saveSnapshot().catch(console.error)}>Save Platform Snapshot</button></li>
@@ -84,6 +85,12 @@ class LeftMenu extends HTMLElement {
         });
     }
 
+    async toColumns() {
+        await fin.Platform.Layout.getCurrentSync().applyPreset({
+            presetType: 'columns'
+        });
+    }
+
     async newDefaultWindow() {
         //we want to add a chart in a new window.
         return fin.Platform.getCurrentSync().createView({
@@ -101,7 +108,8 @@ class LeftMenu extends HTMLElement {
                 defaultTop: 200,
                 saveWindowState: false,
                 url: chartUrl,
-                contextMenu: true
+                contextMenu: true,
+                frame: true
             }]
         });
     }
