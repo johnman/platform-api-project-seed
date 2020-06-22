@@ -39,7 +39,10 @@ class TitleBar extends HTMLElement {
                 <div class="title-bar-draggable">
                     <div id="title"></div>
                 </div>
+
                 <div id="buttons-wrapper">
+                    <img style="height:15px;width:30px;padding-left:10px;" src="/images/united-states-of-america-flag-xs.png" @click=${this.selectUSA}>
+                    <img style="height:15px;width:30px;padding-left:10px;" src="/images/canada-flag-xs.png" @click=${this.selectCanada}>
                     <div class="button" title="Toggle Theme" id="theme-button" @click=${this.toggleTheme}></div>
                     <div class="button" title="Toggle Sidebar" id="menu-button" @click=${this.toggleMenu}></div>
                     <div class="button" title="Toggle Layout Lock" id="lock-button" @click=${this.toggleLockedLayout}></div>
@@ -48,6 +51,14 @@ class TitleBar extends HTMLElement {
                     <div class="button" title="Close Window" id="close-button" @click=${() => fin.me.close().catch(console.error)}></div>
                 </div>`;
         return render(titleBar, this);
+    }
+
+    selectCanada = async () => {
+        fin.Platform.getCurrentSync().setWindowContext({ country: 'Canada' });
+    }
+
+    selectUSA = async () => {
+        fin.Platform.getCurrentSync().setWindowContext({ country: 'USA' });
     }
 
     maxOrRestore = async () => {

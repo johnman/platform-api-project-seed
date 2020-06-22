@@ -1,4 +1,5 @@
 {
+    "devtools_port": 9191,
     "runtime": {
         "arguments": "--v=1 --inspect",
         "version": "beta"

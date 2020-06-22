@@ -31,6 +31,11 @@ class LeftMenu extends HTMLElement {
                 processAffinity: 'dp_2'
             },
             {
+                url: 'http://localhost:8052',
+                printName: 'Dash App 3',
+                processAffinity: 'dp_3'
+            },
+            {
                 url: 'https://www.google.com/search?q=INDEXDJX:+.DJI&stick=H4sIAAAAAAAAAONgecRozC3w8sc9YSmtSWtOXmNU4eIKzsgvd80rySypFBLjYoOyeKS4uDj0c_UNkgsry3kWsfJ5-rm4Rrh4RVgp6Ll4eQIAqJT5uUkAAAA&source=lnms&sa=X&ved=0ahUKEwii_NWT9fzoAhU3mHIEHWy3AWIQ_AUIDSgA&biw=1280&bih=1366&dpr=1',
                 printName: 'News',
                 processAffinity: 'mw_1'

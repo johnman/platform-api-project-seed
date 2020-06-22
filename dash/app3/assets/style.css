@@ -1,0 +1,12 @@
+body {
+    background-color: var(--main-background-color);
+    color: var(--body-font-color)
+}
+
+.dash-graph text {
+    fill: var(--body-font-color)!important;
+}
+
+.Select-menu-outer {
+    background-color: var(--main-background-color);
+}
